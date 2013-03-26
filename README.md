@@ -5,8 +5,8 @@ languages. The main point of this is to help developers build Web services in a 
 
 This package Contains the Server and Client's PHP Implementation of zoServices.
 
-Changelog
------------
+##Changelog
+- - -
 
 zoServices 1.0
 
@@ -16,26 +16,27 @@ zoServices 1.0
 - Adding CORS config.
 - Refactoring code.
 
-#### Server
+## Server
 
 1. Install
-----------
+- - -
 To Use Server just copy all content of Server folder to your htdocs folder, where server will manage all requests
 if you want to separate CLASS folder and RESPONSE folder see Advance Configuration.
 
 2. Configuration
-----------------
+- - -
 You can define whom class will use as a default class using for request that don't need specify class name, for
 default this is configurate to "Main Class" in response folder, but you can modify the static method "defaultClass"
 in zoServicesConfig.class.php in "classes" folder.
 
-public static function defaultClass()
-{
+```php
+public static function defaultClass(){
 	return 'main';
 }
+```
 
 3. Advance Configuration.
--------------------------
+- - -
 If you separate CLASS folder you will need configure in main page the next configure.
 define ( 'CLASS_PATH',                 'PATH to Server Classes');
 
@@ -43,22 +44,22 @@ If you separate RESPONSE folder you will need configure in main page the next co
 zoServiceConfigure::set('responses',  'responses_path');
 
 4. TEST Server
---------------
+- - -
 For test if you server is configurate correctly, open your favorite browser and input the url where you install
 the server and will replay this JSON string.
 
 {"id":null,"error":{"code":-32700,"message":"JSON Parser Error in RPC Request"},"jsonrpc":"2.0"}
 
 
-#### Client
+## Client
 
 1. Install
-----------
+- - -
 To Use Client just copy all content of Client folder to your project folder, where server will manage all requests
 if you want to separate CLASS folder and RESPONSE folder see next topic.
 
 2. Configuration
-----------------
+- - -
 If you separate CLASS folder you will need configure in zoServicesClient.inc.php the next configure.
 define ( 'CLASS_PATH',                 'PATH to Server Classes');
 
@@ -70,8 +71,8 @@ zoServiceConfigure::set('server_type', 	CURL_ENGINE);
 
 
 
-4. TEST Client
---------------
+3. TEST Client
+- - -
 For test configure you client with a previously installed server, include in your project, then when you can use
 the client to call remote classes and methods
 
@@ -98,16 +99,16 @@ $client->endBatch();
 
 
 
-Support
---------------------
+##Support
+- - -
 If Found an Issue, doubt or complain related to this project please contact to
 
 Diego Resendez <diego.resendez@zero-oneit.com>
 Developer and Lead of the Project.
 
 
-Donations
---------------------
+##Donations
+- - -
 If you want to contribute with this project you can donate via pay pal to
 Diego Resendez <diego.resendez@zero-oneit.com>
 
