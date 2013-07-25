@@ -48,7 +48,9 @@ class zoServicesSender {
 			$oResponse = json_decode($server->send($request));
 			//echo "obtain response...<br/><pre>".print_r($oResponse,true).'</pre><br />';
 			$server = null;
-			return $oResponse;
+			if (!is_null($oResponse->result)){
+				return $oResponse->result;
+			}
 			
 			
 		}
@@ -68,7 +70,18 @@ class zoServicesSender {
 		$oResponse = json_decode($server->send($this->request));
 		//echo "obtain response...<br/><pre>".print_r($oResponse,true).'</pre><br />';
 		$server = null;
-		return $oResponse;
+		$aResponses = array();
+
+		if (!empty($oResponse)){
+			foreach ($oResponse as $Response) {
+				if (!empty($Response->result)){
+					$aResponses[] = $Response->result;	
+				}	
+			}
+		}
+
+		return $aResponses;
+		
 	}
 	
     public function __get($param)

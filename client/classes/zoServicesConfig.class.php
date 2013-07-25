@@ -8,7 +8,8 @@ class zoServiceConfigure
 		'test'						=> false,
 		'version'					=> '1.0 PHP Client Code Name -:Chronos:-',
 		'developer'					=> 'Diego Resendez <diego.resendez@zero-oneit.com>',
-		'license'					=> 'Apache License v2.0'
+		'license'					=> 'Apache License v2.0',
+		'is_batch'					=> false
 
 	);
 

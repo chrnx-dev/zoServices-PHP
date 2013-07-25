@@ -1,4 +1,8 @@
 <?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 define ( 'DS',  DIRECTORY_SEPARATOR);
 /**
  * Server Main Path.
@@ -18,5 +22,14 @@ require_once CLASS_PATH.'zoServicesNet.class.php';
 require_once CLASS_PATH.'zoServicesClient.class.php';
 
 
-zoServiceConfigure::set('server',   'path to server');
+zoServiceConfigure::set('server',   'http://localhost/server/');
 zoServiceConfigure::set('server_type', 	CURL_ENGINE);
+
+$client = new zoServicesClient();
+$client->startBatch();
+echo '<pre>'.print_r($client->test(),true).'</pre>';
+echo '<br />';
+echo '<pre>'.print_r($client->services->getServiceInfo(),true).'</pre>';
+echo '<pre>'.print_r($client->endBatch(),true).'</pre>';
+
+
